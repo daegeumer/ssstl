@@ -32,5 +32,7 @@ int main()
 		e = y[i++];
 
 	// 위와 같은 동작을 하는 알고리즘(함수)가 std::copy 입니다.
-	std::copy(y, y+5, s.begin());  // 앞으로 예제에서 널리 사용합니다.
+//	std::copy(y, y+5, s.begin());  // 앞으로 예제에서 널리 사용합니다.
+
+	std::copy(std::begin(y), std::end(y), std::begin(s));
 }
