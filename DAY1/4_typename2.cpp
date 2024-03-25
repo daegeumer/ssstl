@@ -29,6 +29,10 @@ void print_first_element(T& v)
 	// 컨테이너 T가 저장하는 요소의 타입을 알고 싶을때는 아래 처럼 하면됩니다
 	typename T::value_type  n = v.front();
 
+	// 이 예제의 경우는 위처럼 하지 말고 그냥 auto 하면 됩니다.
+	// => 하지만 복잡한 코드에서 auto 를 표기할수 없을때가 있습니다(오후수업)
+	auto n1 = v.front();
+
 	std::cout << n << std::endl;
 }
 
