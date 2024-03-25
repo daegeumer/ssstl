@@ -20,8 +20,9 @@ int main(int argc, char** argv)
 //	std::copy(x, x+5, std::inserter(s, std::next(s.begin(), 3))); 
 							// 		0, 0, 0, 1, 2, 3, 4, 5, 0, 0
 
-	std::copy(x, x+5, std::inserter(s, s.begin()); 							
-							// 		0, 0, 0, 0, 0
+	// front_inserter 의 사용결과와 잘 비교해 보세요
+	std::copy(x, x+5, std::inserter(s, s.begin())) ; 							
+							// 		1, 2, 3, 4, 5,0, 0, 0, 0, 0
 
 	for (auto& n : s)
 		std::cout << n << ", ";
