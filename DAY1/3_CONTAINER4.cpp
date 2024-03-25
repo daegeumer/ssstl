@@ -74,11 +74,11 @@ int main()
 	s.push_front(50);
 
 	slist<int>::iterator p1 = find(s.begin(), s.end(), 30);
+							// s.find(30)
 
 	if ( p1 == s.end()) 
 		std::cout << "fail" << std::endl;
 	else
 		std::cout << "success : " << *p1 << std::endl;
-
-
 }
+// 40 page
