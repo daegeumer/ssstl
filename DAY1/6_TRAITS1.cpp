@@ -1,6 +1,10 @@
 ﻿#include <iostream>
 #include <list>
 
+// Container::value_type : 컨테이너가 저장하는 요소의 타입
+// Iterator::value_type  : iterator 가 가리키는 요소의 타입
+
+
 template<typename T> 
 typename T::value_type sum( T first, T last)
 {
