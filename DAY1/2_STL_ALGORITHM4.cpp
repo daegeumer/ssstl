@@ -14,6 +14,7 @@
 // 아래 처럼 만들면
 // 1. 구간의 타입과 검색 요소의 타입이 분리되고
 // 2. 구간은 반드시 "raw pointer" 일 필요가 없습니다
+// => 단, 구간을 나타내는 타입은 ++, ==, !=, * 연산이 가능해야 합니다.
 template<typename T1, typename T2>
 T1 find(T1 first, T1 last, T2 c)
 {
