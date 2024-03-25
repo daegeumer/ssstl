@@ -56,3 +56,15 @@ int main()
 			   // => vector 의 반복자는 random access iterator(continuos)
 			   //    따라서, 모든 알고리즘(일반 함수) 사용가능하다.!
 }
+
+// 1. 5개(6개) 분류를 외우세요
+
+// 2. 각 컨테이너의 반복자가 어떤 분류(category) 인지 외우세요
+//   list   : bidirectional
+//   vector : random
+
+// 3. 각 알고리즘의 요구사항을 알고 있어야 합니다.
+//  std::find : input 요구
+//  std::sort : random access iterator 요구
+
+// 4. std::sort() 에 std::list 반복자를 보낼수 없는 이유를 알아야 합니다.
