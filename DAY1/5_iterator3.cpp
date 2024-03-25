@@ -1,6 +1,12 @@
 ﻿#include <iostream>
 #include <list>   
 #include <vector>
+#include <ranges>
+
+// g++ 5_iterator3.cpp -std=c++20 
+
+// build.bat 는 -std=c++23 으로 되어 있습니다.
+
 
 int main()
 {
@@ -22,8 +28,9 @@ int main()
     // #4. C++20 부터 새로운 begin 등장
 	auto p = std::ranges::begin(s); // 가장 안전한 코드
 
-	auto p1 = std::begin( std::list{1,2,3}); // ok
-	auto p1 = std::ranges::begin( std::list{1,2,3}); // error
+	auto p1 = std::begin( std::list{1,2,3} ); // ok
+
+//	auto p2 = std::ranges::begin( std::list{1,2,3} ); // error
 }
 
 
