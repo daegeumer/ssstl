@@ -17,9 +17,11 @@ int main(int argc, char** argv)
 //		s2.push_back(e);
 
 	// #3. 삽입반복자 - 클래스 버전 사용
-	std::back_insert_iterator< std::list<int>> p(s2);
+//	std::back_insert_iterator< std::list<int>> p(s2);
+//	std::copy( s1.begin(), s1.end(), p);
 
-	std::copy( s1.begin(), s1.end(), p);
+	// #4. 삽입반복자를 만드는 함수 사용
+	std::copy( s1.begin(), s1.end(), std::back_inserter(s) );
 
 
 
