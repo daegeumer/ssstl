@@ -7,11 +7,11 @@ class my_back_insert_iterator
 {
 	T* cont;
 public:
-	my_back_insert_iterator(T& c) : cont(&c) {}
+	constexpr my_back_insert_iterator(T& c) : cont(&c) {}
 
-	my_back_insert_iterator& operator*() { return *this;}
+	constexpr my_back_insert_iterator& operator*() { return *this;}
 
-	my_back_insert_iterator& operator= ( const typename T::value_type& value )
+	constexpr my_back_insert_iterator& operator= ( const typename T::value_type& value )
 	{
 		cont->push_back(value);
 		return *this;
