@@ -24,5 +24,13 @@ int main()
 	while( first != last )
 	{
 		*first = y[i++];
+		++first;
 	}
+
+	i = 0;
+	for( auto& e : s)
+		e = y[i++];
+
+	// 위와 같은 동작을 하는 알고리즘(함수)가 std::copy 입니다.
+	std::copy(y, y+5, s.begin());  // 앞으로 예제에서 널리 사용합니다.
 }
