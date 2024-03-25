@@ -2,9 +2,9 @@
 #include <list>
 
 template<typename T> 
-? sum( T first, T last)
+typename T::value_type sum( T first, T last)
 {
-	? s = 0;
+	typename T::value_type s = 0;
 
 	while( first != last )
 	{
