@@ -52,4 +52,7 @@ int main()
 
 	std::vector<int> v2 = {1,2,3};
 	v2.sort(); // 이 멤버 함수가 있을까요 ??
+			   // => 없다. sort 하고 싶다면 std::sort() 사용하면 된다.
+			   // => vector 의 반복자는 random access iterator(continuos)
+			   //    따라서, 모든 알고리즘(일반 함수) 사용가능하다.!
 }
