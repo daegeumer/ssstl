@@ -55,6 +55,7 @@ class list
 {
 public:
 	using value_type = T; // <=== 핵심
+	using iterator = slist_iterator<T>;
 };
 
 std::list<int> s = {1,2,3};
