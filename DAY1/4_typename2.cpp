@@ -24,8 +24,10 @@ void print_first_element(T& v)
 {
 	// 아래 ? 자리를 채워 보세요(auto 말고)
 	// T : std::list<double>
-	// ? : double
-	? n = v.front();
+	// T::value_type : std::list<double>::value_type 이므로 "double"
+
+	// 컨테이너 T가 저장하는 요소의 타입을 알고 싶을때는 아래 처럼 하면됩니다
+	typename T::value_type  n = v.front();
 
 	std::cout << n << std::endl;
 }
@@ -43,7 +45,7 @@ int main()
 // 그 타입을 외부에서 알고 싶을때가 있습니다.
 // 위에 만든 print_first_element() 처럼
 // 그래서 STL 이 아래처럼 설계 되었습니다.
-
+/*
 template<typename T>
 class list 
 {
@@ -52,4 +54,6 @@ public:
 };
 
 std::list<int> s = {1,2,3};
+
 std::list<int>::value_type n = s.front(); // n의 타입은 ?
+*/
