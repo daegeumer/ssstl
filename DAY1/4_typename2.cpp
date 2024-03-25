@@ -61,3 +61,9 @@ std::list<int> s = {1,2,3};
 
 std::list<int>::value_type n = s.front(); // n의 타입은 ?
 */
+
+// 클래스            : 멤버 데이타 + 멤버 함수로 구성
+// 클래스 템플릿(STL) : 멤버 데이타 + 멤버 함수 + 멤버 타입 으로 구성
+//											value_type 같은 개념
+
+// cppreference.com 에서 std::list 검색 
