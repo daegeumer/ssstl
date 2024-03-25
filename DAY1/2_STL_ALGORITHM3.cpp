@@ -1,6 +1,8 @@
 #include <iostream>
 
-// step 3. 검색 대상 타입의 일반화
+// step 3. 검색 대상 타입의 일반화 - template 도입
+// 함수 이름 변경 : strchr => find 로 변경
+
 
 template<typename T>
 T* find(T* first, T* last, T c)
