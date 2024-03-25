@@ -1,13 +1,14 @@
 ﻿#include <iostream>
 #include <list>
 
-? sum( ? first, ? last)
+template<typename T> 
+? sum( T first, T last)
 {
 	? s = 0;
 
 	while( first != last )
 	{
-		s += first;
+		s += *first;
 		++first;
 	}
 	return s;
