@@ -29,9 +29,9 @@ public:
 };
 
 
+List<int, NoLock> st;	
+//List<int, MutexLock> st;	
 
-
-List<int> st;	
 int main()
 {
 
