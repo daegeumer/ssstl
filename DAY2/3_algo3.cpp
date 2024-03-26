@@ -30,9 +30,11 @@ int main()
 
 // 1. 컨테이너 반복자를 알고리즘에 보낼수 없을때
 //    std::sort(list_iterator); // error
+//	  list.sort(); // ok
 
 // 2. 컨테이너 반복자를 알고리즘에 보낼수 있지만 보다 최적화된 구현이 있을때
-//   std::remove(list_iterator)
+//   std::remove(list_iterator, 3); // ok 에러 아님.
+//   list.remove(3); // 하지만 위 코드 보다 이코드가 성능이 좋다.
 
 
 
