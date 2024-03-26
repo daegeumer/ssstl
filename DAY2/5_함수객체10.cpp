@@ -9,8 +9,23 @@ int main()
 
 	int k = 3; 
 
-	// 주어진 구간에서 1번째 나오는 "k의 배수" 을 찾고 싶다.
-    auto ret2 = std::find_if(v.begin(), v.end(), foo); 
+	// 람다 표현식은 "지역변수를 캡쳐" 할수 있습니다.
+	// [k] : 람다표현식에서 k를 사용하겠다는 의미
+    auto ret2 = std::find_if(v.begin(), v.end(), 
+									[k](int n) { return n % k == 0;}); 
+	//---------------------------------------
+	class CompilerGeneratedName
+	{
+		int k;	// 람다표현식에서 캡쳐를 사용하면 멤버 데이타가 추가됩니다
+	public:
+		CompilerGeneratedName(int n) : k(n) {}
+
+		inline auto operator()(int n) const 
+		{
+			return n % k == 0;
+		}
+	};
+	auto ret2 = std::find_if(v.begin(), v.end(), CompilerGeneratedName(k)); 
 
 }
 
