@@ -26,7 +26,7 @@ int main()
 		}
 	};
 	auto ret2 = std::find_if(v.begin(), v.end(), CompilerGeneratedName(k)); 
-
+	// 결국 함수객체3.cpp 에서 만든 "IsDivide" 와 동일한 원리 입니다.
 }
 
 
