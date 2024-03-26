@@ -16,12 +16,11 @@ public:
 	size_type size() const { return sz;}
 };
 
-
 int main()
 {
 	std::vector<int> v = { 1,2,3 };
 
-	// 1. 멤버 타입이 있다.
+	// #1. 멤버 타입이 있다.
 	// => ? 자리에 최선의 코드를 적어 보세요(단, auto 사용하지 말고)
 
 	// => vector 의 크기를 담는 타입은 vector 설계자가 정확히 알고 있다.
@@ -29,10 +28,15 @@ int main()
 
 	std::vector<int>::size_type sz = v.size();
 
-    ? cnt = v.end() - v.begin();
+    std::vector<int>::difference_type cnt = v.end() - v.begin();
 
-	// 2. 반환과 제거를 동시에 하지 않는다.
-	int n = v.pop_back();	// ?
+
+
+	// #2. 반환과 제거를 동시에 하는 멤버 함수는 없다!
+//	int n = v.pop_back();	// error. pop_back 은 제거만 하고반환 안함.
+
+	int n = v.back(); // 반환만 하고, 제거 안함.
+	v.pop_back();     // 제거만, 
 
 
 	// 3. 단위 전략을 많이 사용한다.
