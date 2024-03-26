@@ -12,8 +12,19 @@ int main()
 
 //	std::sort(v1.begin(), v1.end()); // <algorithm>
 
+
 	// #1. numeric 에는 다양한 수학 관련 알고리즘
-	int n = std::accumuate(v1.begin(), v1.end(), 0);
+//	int n = std::accumulate(v1.begin(), v1.end(), 0); // 55
+										// 기본 버전은 + 사용
+
+	// #2. STL  은 많은 알고리즘은 "정책변경" 이 가능합니다
+//	int n = std::accumulate(v1.begin(), v1.end(), 1, 
+//							[](int a, int b){ return a * b; });
+
+	// +, -, *, %, / 등의 연산을 수행하는 함수객체가 이미 있습니다.
+	int n = std::accumulate(v1.begin(), v1.end(), 1, 
+								std::multiplies<int>() );
+
 
 	std::cout << n << std::endl;
 }
