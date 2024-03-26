@@ -12,7 +12,7 @@
 // => 다른 용도로 이 기술 사용
 
 
-template<typename T, typename ThreadModel > class List
+template<typename T, typename ThreadModel = NoLock > class List
 {	
 	ThreadModel tm;
 public:
@@ -42,6 +42,8 @@ public:
 
 List<int, NoLock> st;	
 //List<int, MutexLock> st;	
+
+// List<int> st;	  // 디폴트 정책인 NoLock 사용
 
 int main()
 {
