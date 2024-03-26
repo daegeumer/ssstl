@@ -3,6 +3,7 @@
 #include <algorithm>
 #include "show.h"
 
+int foo(int a, int b) {	return a + b;}
 
 int main()
 {
@@ -13,10 +14,13 @@ int main()
     // transform 알고리즘
 	std::transform( s1.begin(), s1.end(), // 1. 이 구간의 내용을
 					s2.begin(),			  // 2. 이 구간의 내용과 함께
-					s3.begin(),           // 4. 함수 결과를 이곳에 넣어라
+//					s3.begin(),           // 4. 함수 결과를 이곳에 넣어라
+					std::back_inserter(s3), 
 					foo);				  // 3. 이 함수에 보내서
 
 	// 주석을 보고, foo 가 단항인지 이항인지 생각해보세요
+
+	show(s3);
 }
 
 
