@@ -28,4 +28,14 @@ int main()
 	d.push_front(0); // ok
 	v.push_front(5); // error.
 
+	// [] 은 list 가 안됩니다.
+	s[0] = 0; // error
+	d[0] = 0; // ok
+	v[0] = 0; // ok
+
+	// [] 가 필요하고, 전방삽입이 필요 없다 : vector
+	// [] 가 필요하고, 전방삽입이 필요 하다 : deque
+	// 삽입삭제가 많다. : list
+
+	// 그런데, 일반적으로는 vector 권장
 }
