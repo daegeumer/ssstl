@@ -11,9 +11,10 @@ int main()
 	std::string s;
 
 //	std::cin >> s;  // 표준 입력에서 한단어 입력
-	     iss >> s;
+//	     iss >> s;
 
-	std::cout << s << std::endl;
+	while( iss >> s)
+		std::cout << s << std::endl;
 
 
 }
