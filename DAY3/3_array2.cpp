@@ -10,11 +10,11 @@ struct array
 	int size() const { return N;}
 
 	// STL 의 규칙을 지켜야 합니다.
-	using value_type = ?;
-	using iterator = ?;
+	using value_type = T;
+	using iterator = T*;
 
-	iterator begin() { return ?;}
-	iterator end() { return ?;}
+	iterator begin() { return buff;}
+	iterator end() { return buff + N;}
 };
 
 int main()
