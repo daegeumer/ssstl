@@ -43,7 +43,10 @@ int main()
 
 
 	// #5. 값이 있는지 조사
-	
+	auto ret3 = s.find(30);
+	if ( ret3 == s.end() ) {} // 30이 없다
+
+	if ( s.contains(30)) {} // C++20 부터 제공되는 멤버.
 }
 
 
