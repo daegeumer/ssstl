@@ -5,6 +5,7 @@
 #include "show.h"
 #include <set> 
 
+/*
 // set 의 템플릿 인자를 잘 보세요
 template<typename T, 				  // 저장할 타입
 		 typename Pr = std::less<T>,  // 요소 비교에 사용할 함수객체
@@ -26,11 +27,12 @@ public:
 			return 실패;  // pair 타입으로.. 
 	}
 };
-
+*/
 
 int main()
 {
-	std::set<int> s;
+//	std::set<int> s;
+	std::set<int, std::greater<int> > s;
 
 	s.insert(20);
 	s.insert(30);
