@@ -1,8 +1,12 @@
 #include "show.h"
 #include <stack>
+#include <vector>
+#include <list>
 
 int main()
 {
+	std::vector<int, debug_alloc<int>> v;
+
 	std::stack<int> s;
 
 	s.push(0); // 이순간 메모리 할당 정보를 볼수 있도록
