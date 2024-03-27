@@ -17,6 +17,13 @@ public:
 	void insert( const T& e) 
 	{
 		if ( cmp(root, e) )
+			add right_child;
+
+		else if ( cmp(e, root) )
+			add left_child
+
+		else
+			return 실패;  // pair 타입으로.. 
 	}
 };
 
