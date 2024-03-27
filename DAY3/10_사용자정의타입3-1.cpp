@@ -2,6 +2,15 @@
 #include <vector>
 #include <algorithm>
 #include "show.h"
+using namespace std::rel_ops; // !=, <=, >=, > 의 template 버전 제공
+
+/*
+template<typename T> bool operator !=( T a, T b)
+{
+	return !( a== b);	
+}
+*/
+
 class Point
 {
 public:
@@ -25,7 +34,8 @@ public:
 	bool operator<(const Point& other) const {	return x < other.x;	}
 	bool operator==(const Point& other) const {	return x == other.x && y == other.y;}
 };
-using namespace std::rel_ops; // !=, <=, >=, > 의 template 버전 제공
+
+
 
 int main()
 {
@@ -33,7 +43,7 @@ int main()
 	Point p2(2,3);
 
 	bool b = p1 > p2; // ok
-	
+
 
 	std::vector<Point> v;
 
