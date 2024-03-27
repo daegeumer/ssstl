@@ -5,8 +5,8 @@
 
 int main()
 {
-	std::set<int> s;
-//	std::unordered_set<int> s;
+//	std::set<int> s;
+	std::unordered_set<int> s;
 
 	s.insert(10);
 	s.insert(35);
@@ -21,5 +21,12 @@ int main()
 	std::cout << *p << std::endl;
 
 	show(s);
+
+	std::cout << s.bucket_count() << std::endl;
+
+	for( int i = 0; i < s.bucket_count(); i++ )
+	{
+		std::cout << s.bucket_size(i) << std::endl;
+	}
 }
 
