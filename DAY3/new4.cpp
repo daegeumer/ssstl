@@ -4,15 +4,19 @@
 
 constexpr int size = 1'000'000;
 constexpr int element_size = 10000;
+
 void ex1()
 {
-	std::vector<int> v(element_size);
+	int* p1 = (int*)operator new(sizeof(int)*element_size);
+	std::uninitialized_fill_n(p1, element_size, 0);
+
+	operator delete(p1);
 }
 
 void ex2()
 {
-	std::vector<int> v;
-	v.reserve(element_size);
+	int* p2 = (int*)operator new(sizeof(int)* element_size);
+	operator delete(p2);
 }
 
 void use_size()
