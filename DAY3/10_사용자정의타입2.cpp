@@ -48,6 +48,14 @@ int main()
 
 	std::cout << "------------------" << std::endl;	
 }
+// 사용자 정의 타입을 보관한다면 "push_xxx" 대신 "emplace_xxx"
+// push_back  => emplace_back
+// push_front => emplace_front
+// insert     => emplace
 
+// 단, primitive 타입 또는 usertype* 인 경우는 push_xxx, emplace_xxx 모두 
+//	비슷
+// std::vector<int>		
+// std::vector<Point*>
 
 
