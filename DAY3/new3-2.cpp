@@ -16,14 +16,33 @@ class vector
 	std::size_t capacity;
 	Ax ax;
 public:
-	vector(std::size_t s) : sz(s), capcity(s) 
+	vector(std::size_t s) : sz(s), capacity(s) 
 	{
-		buff = new T[sz];
+//		buff = new T[sz]; // 이렇게 하면 T 가 디폴트 생성자가 있어야 한다는
+						  // 제약이 생기게 됩니다.
+
+		buff = static_cast<T*>( operator new(sizeof(T)* sz ));
+
+		for(int i = 0; i < sz; i++)
+		{
+			new(&buff[i]) Point;
+		}
 	}
+	vector(std::size_t s, const T& value) : sz(s), capacity(s) 
+	{
+
+		buff = static_cast<T*>( operator new(sizeof(T)* sz ));
+
+		for(int i = 0; i < sz; i++)
+		{
+			new(&buff[i]) Point(value);
+		}
+	}	
 };
 int main()
 {
-	vector<Point> v(10);
+	Point pt(1,1);
+	vector<Point> v(10, pt);
 
 }
 
