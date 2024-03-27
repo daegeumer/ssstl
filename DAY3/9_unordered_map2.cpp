@@ -37,6 +37,8 @@ int main()
 		show(value);
 	}
 
+	std::cout << index.bucket_count() << std::endl;
+
 }
 
 
