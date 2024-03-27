@@ -12,6 +12,11 @@
 // 1. list 의 멤버 함수이름을 stack 처럼 보이게 하고
 // 2. list 를 뒷쪽으로만 입/출력 할수 있게 하자
 
+// adapter 패턴 : 기존 클래스의 인터페이스(멤버 함수이름)을 변경해서
+//				 다른 클래스 처럼 보이게 만드는 디자인 기법
+
+// STL 의 stack 이 "adapter 패턴" 으로 설계된 것
+
 template<typename T>
 class stack 
 {
@@ -21,7 +26,6 @@ public:
 	void pop()            { c.pop_back();}
 	T&   top()            { return c.back();}
 };
-
 
 int main()
 {
