@@ -1,9 +1,13 @@
+// new1.cpp - git에 소스 복사해오세요
+
 #include <iostream>
 #include <vector>
 #include "show.h"
 
 constexpr int size = 1'000'000;
 constexpr int element_size = 10000;
+//constexpr int element_size = 100;
+
 void ex1()
 {
 	std::vector<int> v(element_size);
