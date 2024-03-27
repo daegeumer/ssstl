@@ -7,7 +7,10 @@ int main()
 {
 	std::vector<int, debug_alloc<int>> v;
 
-	std::stack<int> s;
+//	std::stack<int> s;
+//	std::stack<int,  debug_alloc<int>> s; // error. 
+
+	std::stack<int, std::vector<int, debug_alloc<int>> > s;
 
 	s.push(0); // 이순간 메모리 할당 정보를 볼수 있도록
 				// 위 코드에 allocator 를 변경해 보세요, debug_alloc 으로
