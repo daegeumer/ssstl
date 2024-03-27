@@ -1,13 +1,15 @@
 #include "show.h"
 #include <vector>
+#include <array>
 
-void f1()
+void f1() { int x[10]; }
+void f2() {	std::vector<int> v(10);}
+void f3() {	std::array<int, 10> arr;}
+
+void use_std_array()
 {
-	int x[10];
-}
-void f2()
-{
-	std::vector<int> v(10);
+	for( int i = 0; i < 1'000'000; i++)
+		f3();
 }
 
 void use_array()
@@ -15,9 +17,15 @@ void use_array()
 	for( int i = 0; i < 1'000'000; i++)
 		f1();
 }
+void use_vector()
+{
+	for( int i = 0; i < 1'000'000; i++)
+		f2();
+}
 
 int main()
 {
 	chronometry(use_array);
 	chronometry(use_vector);
+	chronometry(use_std_array);
 }
