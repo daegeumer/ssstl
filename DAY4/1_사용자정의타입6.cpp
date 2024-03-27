@@ -14,10 +14,19 @@ struct PeopleHash
 {
 	int operator()(const People& p) const 
 	{
+		std::hash<int> hi;
+		std::hash<std::string> hs;
 
+		return hs(p.name) + hs(p.age);
 	}
 };
-
+struct PeopleEqual 
+{
+	bool operator()(const People& p1, const People& p2) const 
+	{
+		return p1.name == p2.name && p1.age == p2.age;
+	}
+};
 
 
 
