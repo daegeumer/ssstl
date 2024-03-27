@@ -30,19 +30,22 @@ public:
 	}
 	vector(std::size_t s, const T& value) : sz(s), capacity(s) 
 	{
-
 		buff = static_cast<T*>( operator new(sizeof(T)* sz ));
 
+		/*
 		for(int i = 0; i < sz; i++)
 		{
 			new(&buff[i]) Point(value);
 		}
+		*/
+		std::uninitialized_fill_n(buff, sz, value); // 위 for문이 하는일과 동일
 	}	
 };
 int main()
 {
-	Point pt(1,1);
-	vector<Point> v(10, pt);
+//	Point pt(1,1);
+//	vector<Point> v(10, pt);
+	vector<Point> v(10, Point(0,0));
 
 }
 
