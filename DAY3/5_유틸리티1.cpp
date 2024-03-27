@@ -12,10 +12,15 @@ int main()
 
 	std::pair<int, std::pair<double, int>> p2(1, {3.4, 2});
 
+
 	// C++11 부터 pair 의 일반화 버전이 tuple 제공
 	std::tuple<int, double, int> t1(1, 3.4, 3);
 
 	std::cout<< std::get<1>(t1) << std::endl; // 3.4
+
+	// pair, tuple 을 만드는 함수도 있습니다.
+	auto p3 = std::make_pair(1, 3.4);
+	auto t4 = std::make_tuple(1, 3.4, 1);
 }
 
 
