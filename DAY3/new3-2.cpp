@@ -23,21 +23,23 @@ public:
 //		buff = new T[sz]; // 이렇게 하면 T 가 디폴트 생성자가 있어야 한다는
 						  // 제약이 생기게 됩니다.
 
-		buff = static_cast<T*>( operator new(sizeof(T)* sz ));
+//		buff = static_cast<T*>( operator new(sizeof(T)* sz ));
+		buff = ax.allocate(sz);
 
 		for(int i = 0; i < sz; i++)
 		{
-			new(&buff[i]) Point;
+			new(&buff[i]) T;
 		}
 	}
 	vector(std::size_t s, const T& value) : sz(s), capacity(s) 
 	{
-		buff = static_cast<T*>( operator new(sizeof(T)* sz ));
+//		buff = static_cast<T*>( operator new(sizeof(T)* sz ));
+		buff = ax.allocate(sz);
 
 		/*
 		for(int i = 0; i < sz; i++)
 		{
-			new(&buff[i]) Point(value);
+			new(&buff[i]) T(value);
 		}
 		*/
 		std::uninitialized_fill_n(buff, sz, value); // 위 for문이 하는일과 동일
