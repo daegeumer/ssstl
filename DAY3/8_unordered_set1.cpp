@@ -11,10 +11,10 @@ int main()
 	std::hash<double> hd;
 	std::hash<std::string> hs;
 
-	std::cout << hi(100) << std::endl;
-	std::cout << hd(3.4) << std::endl;
-	std::cout << hs("ABC") << std::endl;
-	std::cout << hs("XYZ") << std::endl;
-	std::cout << hs("abc") << std::endl;
+	std::cout << hi(100) << hi(100) % 13 << std::endl;
+	std::cout << hd(3.4) << hd(3.4) % 13 << std::endl;
+	std::cout << hs("ABC") << hs("ABC") % 13 << std::endl;
+	std::cout << hs("XYZ") << hs("XYZ") % 13 << std::endl;
+	std::cout << hs("abc") << hs("abx") % 13 << std::endl;
 }
 
