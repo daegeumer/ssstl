@@ -21,7 +21,15 @@ int main()
 	// => 2번의 메모리 할당
 	// => 1. new Point(1,2)
 	// => 2. shared_ptr 의 생성자에서 new control_block(참조계수등)
-	std::shared_ptr<Point> sp(new Point(1, 2));
+	// std::shared_ptr<Point> sp(new Point(1, 2));
+
+
+	// std::make_shared()
+	// 1. operator new( sizeof(Point) + sizeof(control_block)) 으로 한번에 할당후
+	// 2. new(객체부분의주소) Point(1,2); 로 생성자 호출후
+	// 3. std::shared_ptr 을 만들어서 반환
+
+	std::shared_ptr<Point> sp = std::make_shared<Point>(1,2);
 	
 	
 }
