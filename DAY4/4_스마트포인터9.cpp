@@ -11,7 +11,9 @@ struct People
 
 //	std::shared_ptr<People> bf;  
 
-	People* bf; 
+	People* bf; 	// 참조계수가 증가하지 않지만
+					// 가리키던 곳의 객체가 파괴되었는지 조사할수 없습니다.
+					// dangling pointer 의 가능성이 있습니다.
 };
 
 int main()
