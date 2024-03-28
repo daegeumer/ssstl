@@ -5,7 +5,7 @@ class Ptr
 {
 	T* obj;
 public:
-	inline Ptr(T* p = 0) : obj(p) {}
+	inline explicit Ptr(T* p = 0) : obj(p) {}
 	inline T* operator->() { return obj; }
 	inline T& operator*() { return *obj; }
 	inline ~Ptr() { delete obj; }
@@ -24,7 +24,8 @@ public:
 
 int main()
 {
-	Ptr<int> p1 = new int;
+//	Ptr<int> p1 = new int; // error. explicit 생성자
+	Ptr<int> p1(new int); // ok 
 	*p1 = 100;
 	std::cout << *p1 << std::endl;
 
