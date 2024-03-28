@@ -31,7 +31,12 @@ int main()
 
 	std::shared_ptr<Point> sp = std::make_shared<Point>(1,2);
 	
+	// std::make_shared 의 장점
+	// 1. 효율적인 메모리 사용(객체 + 관리객체를 한번에 할당)
+	// 2. 안정성 향상(RAII 기술)
 	
+	foo( std::shared_ptr<int>( new int ), goo() );
+	//           A                B         C 
 }
 
 
