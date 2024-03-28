@@ -27,8 +27,8 @@ public:
 };
 // 아래 main 에서 goo 등록시 에러 있습니다. 수정해 보세요
 
-void foo(void* p)        { std::cout << "foo : " << (int)p << std::endl; }
-void goo(void* p, int a) { std::cout << "goo : " << (int)p << std::endl; }
+void foo(void* p)        { std::cout << "foo : " << (long long)p << std::endl; }
+void goo(void* p, int a) { std::cout << "goo : " << (long long)p << std::endl; }
 
 int main()
 {
