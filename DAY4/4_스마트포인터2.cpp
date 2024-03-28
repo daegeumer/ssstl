@@ -16,6 +16,12 @@ public:
 		*ref = 1;
 	}
 
+	Ptr(const Ptr& other) 
+		: obj(other.obj), ref(other.ref)
+	{
+		++(*ref);
+	}
+
 
 	~Ptr() { delete obj;}
 	T* operator->() { return obj; }
