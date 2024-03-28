@@ -1,13 +1,22 @@
 ﻿#include <iostream>
 
 // 1. template 으로 만드는 것이 관례 입니다.
+// 2. 얕은 복사 문제를 해결해야 합니다.
+//    => 관례적으로 참조계수 기술 사용
 
 template<typename T>
 class Ptr
 {
 	T* obj;
+	int* ref;
 public:
-	Ptr(T* p = 0) : obj(p) {}
+	Ptr(T* p = 0) : obj(p) 
+	{
+		ref = new int;
+		*ref = 1;
+	}
+
+
 	~Ptr() { delete obj;}
 	T* operator->() { return obj; }
 	T& operator*() { return *obj; }
