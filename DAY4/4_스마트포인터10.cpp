@@ -46,7 +46,7 @@ int main()
 		if ( sp )
 		{
 			// sp 사용...
-			auto name = sp->bf->name;
+			auto name = sp->name;
 		}
 	}
 }
