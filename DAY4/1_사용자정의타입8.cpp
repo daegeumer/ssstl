@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <unordered_set>
 #include "show.h"
 
@@ -10,7 +10,10 @@ struct People
 	People(const std::string& n, int a) : name(n), age(a) {}
 };
 
-struct PeopleHash
+// C++ 표준의 std::hash 템플릿을 사용자가 만든 타입에 대해서
+// 특수화 버전을 제공하는 기법도 가능합니다.
+template<>
+struct std::hash<People>
 {
 	int operator()(const People& p) const 
 	{
@@ -19,7 +22,8 @@ struct PeopleHash
 		return hs(p.name) + hi(p.age);
 	}
 };
-struct PeopleEqual 
+template<>
+struct std::equal_to<People>
 {
 	bool operator()(const People& p1, const People& p2) const 
 	{
@@ -33,16 +37,10 @@ struct PeopleEqual
 
 int main()
 {
-	/*
-	std::unordered_set< int, 
-						std::hash<int>, 
-						std::equal_to<int>, 
-						std::allocator<int>>
+	std::unordered_set<People> s; 
 
-//	std::unordered_set<People> s; // 이 코드는 아래와 같습니다.
-	std::unordered_set<People, std::hash<People>, std::equal_to<People>, std::allocator<People> > s; 
-*/
-	std::unordered_set<People, PeopleHash, PeopleEqual > s
+//	std::unordered_set<People, std::hash<People>, std::equal_to<People>, std::allocator<People> > s; 
+
 
 
 	s.emplace("kim", 20); // s.insert( People("kim",20))
