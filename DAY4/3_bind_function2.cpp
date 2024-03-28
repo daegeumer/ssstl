@@ -30,12 +30,16 @@ int main()
 
 	// _1, _2, _3 : placeholders 라고 하고, std::placeholders 안에 있습니다
 	auto f3 = std::bind(&foo, std::placeholders::_2, _3, 6, _1);
-
 	//--------------------------------------
 	// std::bind() 의 반환 타입은 "함수객체" 인데.
 	// bind() 인자에 따라 모두 다른 타입입니다.
 
 	std::cout << typeid(f1).name() << std::endl;
 	std::cout << typeid(f2).name() << std::endl;
+
+	// bind()의 반환 타입이 다르기 때문에
+	// "container" 에 보관할수 없습니다
+	// => 해결책이 std::function
+	 
 }
 
