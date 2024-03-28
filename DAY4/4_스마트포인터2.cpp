@@ -23,7 +23,17 @@ public:
 	}
 
 
-	~Ptr() { delete obj;}
+	~Ptr() 
+	{ 
+		if ( --(*ref) == 0 )
+		{
+			delete obj;
+			delete ref;
+		}
+	}
+
+
+
 	T* operator->() { return obj; }
 	T& operator*() { return *obj; }
 };
