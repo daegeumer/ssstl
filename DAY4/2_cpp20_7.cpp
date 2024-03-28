@@ -19,6 +19,11 @@ int main()
 	auto rv2 = v | std::views::filter( [](int n) {return n % 2 == 0;} ) 
 				 | std::views::take(3) | std::views::reverse;
 
+	// 새롭게 나오고 있는 방식 - 아래 처럼 사용하게 하자!!
+	// C# 의 Linq 방식,  Rust 의 iterator 방식
+//	auto rv3 = v.filter(람다표현식).take(3).reverse();
+
+
 	for(auto e : rv2)
 	{
 		std::cout << e << ", ";
