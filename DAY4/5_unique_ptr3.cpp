@@ -32,7 +32,15 @@ int main()
 	std::unique_ptr<int, 삭제자> up( malloc할당);
 
 	// shared_ptr : control block 이 있으므로 삭제자 저장하면 됩니다.
+	// unique_ptr : 삭제자를 위한 저장공간이 없어도 됩니다. 아래 코드 참고
+
+	// 
+	// shared_ptr 은 삭제자를 변경해도 같은 타입
+	// unique_ptr 은 삭제자를 변경하면 다른 타입
 }
+
+
+
 
 template<typename T, typename Dx = std::default_delete<T>>
 class unique_ptr
