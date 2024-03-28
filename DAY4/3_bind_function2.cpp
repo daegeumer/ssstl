@@ -23,7 +23,19 @@ int main()
 	f1(10,3); // foo(1, 2, 10, 3)
 
 
-	auto f2 = ?;
+	// 아래 코드는 4항 함수의 1개 인자를 고정해서 3항 함수를 만드는 코드
+	auto f2 = std::bind(&foo, _2, _3, 6, _1);
+
 	f2(9, 4, 8); // foo(4, 8, 6, 9) 나오도록 위의 ? 만들어 보세요
+
+	// _1, _2, _3 : placeholders 라고 하고, std::placeholders 안에 있습니다
+	auto f3 = std::bind(&foo, std::placeholders::_2, _3, 6, _1);
+
+	//--------------------------------------
+	// std::bind() 의 반환 타입은 "함수객체" 인데.
+	// bind() 인자에 따라 모두 다른 타입입니다.
+
+	std::cout << typeid(f1).name() << std::endl;
+	std::cout << typeid(f2).name() << std::endl;
 }
 
