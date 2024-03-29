@@ -15,7 +15,7 @@ public:
 	reference_wrapper(T& r) : obj(&r) {}
 
 	// 변환 연산자 : 객체가 다른 타입으로 변환이 필요 할때 호출되는 함수
-	operator T&() { return obj;}
+	operator T&() { return *obj;}
 };
 
 int main()
