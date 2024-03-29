@@ -22,11 +22,16 @@ int main()
 	std::future<int> ft1 = std::async(&add, 1, 2);
 	std::future<int> ft2 = std::async(&add, 1, 2);
 
+	std::future_status s = ft.wait_for(2s);
 
-
-	int ret = ft.get();
-
-	std::cout << ret << std::endl;
+	if ( s == future_status::timeout)
+	{
+	
+	} else if ( s == future_status::ready )
+	{
+		int ret = ft.get();
+		std::cout << ret << std::endl;
+	}
 
 
 }
