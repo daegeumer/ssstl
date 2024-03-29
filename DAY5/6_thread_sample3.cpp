@@ -52,8 +52,32 @@ void parallel_sum(T first, T last, R& result)
 
 
 	std::vector<std::thread> thread_vec(cnt_thread-1);
-	std::vector<T> result_vec(cnt_thread); 
+
+	// T : 반복자 타입
+	// R : 결과를 담을 변수의 타입
+	std::vector<R> result_vec(cnt_thread, 0);  // 각 구간의 결과를 담을 vector
+
+	T start = first;
+
+	for( int i = 0; i < cnt_thread-1; i++)
+	{
+		T end = std::next(start, block_size);
+
+		thread_vec[i] = std::thread(&sum<T, R>, 
+								start, end, std::ref(result_vec[i])); 
+
+		start = end;
+	}
+
+	// 마지막 구간은 주스레드가!!
+	sum(start, last, result_vec[cnt_thread-1]);
+
+	// 모든 스레드의 종료 대기
+	for( auto& t : thread_vec )
+		t.join();
+
 }
+
 
 
 
