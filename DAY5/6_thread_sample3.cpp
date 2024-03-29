@@ -76,6 +76,8 @@ void parallel_sum(T first, T last, R& result)
 	for( auto& t : thread_vec )
 		t.join();
 
+	// result_vec 의 모든 결과만 더하면 됩니다.
+	result = std::accumulate( result_vec.begin(), result_vec.end(), 0);
 }
 
 
