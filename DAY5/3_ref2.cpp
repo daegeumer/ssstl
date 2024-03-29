@@ -5,6 +5,9 @@
 // 1. 객체(변수)의 주소를 보관하고 있고
 // 2. "raw reference" 로 암시적 변환이 가능한 도구 입니다.
 
+// 즉, 객체의 주소를 보관하고 있다가 "reference" 로 반환해 줄수 있는 도구
+// pointer => reference 로
+
 
 // reference_wrapper 의 원리를 생각해 봅시다.
 template<typename T>
