@@ -15,11 +15,12 @@ int main()
 
 	r1 = r2;	// 이순간의 동작 방식을 생각해 보세요
 				// 1. C++ 언어의 참조 : 값이 이동. 참조(자체)는 상수이다.
+				// 2. std::reference_wrapper : 참조 이동
 
-	// 결과 예측해 보세요			// C++참조
-	std::cout << n1 << std::endl; // 20
-	std::cout << n2 << std::endl; // 20
-	std::cout << r1 << std::endl; // 20
-	std::cout << r2 << std::endl; // 20
+	// 결과 예측해 보세요			// C++참조   reference_wrapper
+	std::cout << n1 << std::endl; // 20			10
+	std::cout << n2 << std::endl; // 20			20
+	std::cout << r1 << std::endl; // 20			20
+	std::cout << r2 << std::endl; // 20			20
 }
 
