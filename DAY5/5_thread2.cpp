@@ -31,6 +31,11 @@ int main()
 
 
 	// #2. 인자 전달
+	std::thread t2(&f2);
+	std::thread t3(&f3);
+
+	t2.join();
+	t3.join();
 }
 
 
