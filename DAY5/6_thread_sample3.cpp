@@ -44,7 +44,20 @@ void parallel_sum(T first, T last, R& result)
 		cnt_hw_thread = 2;
 
 	std::cout << cnt_hw_thread << std::endl;
+
+	// 실제 스레드는 H/W 갯수와 요소의 수를 고려한 숫자중 작은값
+	const std::size_t cnt_thread = std::min(cnt_hw_thread, max_cnt_thread);
+	//-----------------------------------------------------------------------
+	const std::size_t block_size = cnt_element / cnt_thread;
+
+
+	std::vector<std::thread> thread_vec(cnt_thread-1);
+	std::vector<T> result_vec(cnt_thread); 
 }
+
+
+
+
 
 
 int main()
