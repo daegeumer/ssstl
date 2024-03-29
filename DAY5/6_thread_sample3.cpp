@@ -33,9 +33,18 @@ void parallel_sum(T first, T last, R& result)
 	constexpr std::size_t cnt_element = std::distance(first, last); // 요소갯수
 	if ( cnt_element == 0) return;
 
+	// 스레드당 25개씩 분배할때 필요한 스레드의 갯수
 	constexpr std::size_t max_cnt_thread = 
 				(cnt_element + cnt_per_thread-1) / cnt_per_thread;
 
+	// 현재 H/W 상 코어가 몇개 있는가
+	
+	std::size_t cnt_hw_thread = std::thread::hardware_concurrency();
+
+	if ( cnt_hw_thread == 0 )
+		cnt_hw_thread = 2;
+
+	std::cout << cnt_hw_thread << std::endl;
 }
 
 
