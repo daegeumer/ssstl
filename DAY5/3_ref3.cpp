@@ -21,8 +21,12 @@ int main()
 					  // T arg = &n 에서 T = int* 이므로
 					  // foo(int*) 가 되어서 에러
 
-	std::reference_wrapper<int> r = n;
-	forward(foo, r);
+//	std::reference_wrapper<int> r = n;
+//	forward(foo, r);
+
+	forward(foo, std::ref(n) );
+				// std::ref 가 reference_wrapper 를 만들어 주는 함수입니다.
+				// => "object generator" 기술
 
 	std::cout << n << std::endl; 
 }
