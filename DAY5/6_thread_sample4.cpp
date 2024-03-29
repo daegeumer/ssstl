@@ -6,7 +6,7 @@
 #include <iostream>
 #include "show.h" 
 
-constexpr std::size_t sz = 100'000'000;
+constexpr std::size_t sz = 1'000'000;
 
 std::vector<int> v;
 
@@ -90,6 +90,9 @@ int main()
 {
     init();
 
-    chronometry(f1); // f1의 수행시간을 출력
-    chronometry(f2); // f2의 수행시간을 출력
+    long long r1 = chronometry(f1); // f1의 수행시간을 출력
+    long long r2 = chronometry(f2); // f2의 수행시간을 출력
+
+	std::cout << r1 << std::endl;
+	std::cout << r2 << std::endl;
 }
