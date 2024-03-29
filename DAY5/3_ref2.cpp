@@ -1,6 +1,11 @@
 ﻿#include <iostream>
 #include <functional>
 
+// 결국 reference_wrapper 는
+// 1. 객체(변수)의 주소를 보관하고 있고
+// 2. "raw reference" 로 암시적 변환이 가능한 도구 입니다.
+
+
 // reference_wrapper 의 원리를 생각해 봅시다.
 template<typename T>
 class reference_wrapper
@@ -28,7 +33,7 @@ int main()
 
 	std::cout << n1 << std::endl; 
 	std::cout << n2 << std::endl; 
-	std::cout << r1 << std::endl; 
+	std::cout << r1 << std::endl;  // std::cout << r1.operator int&()
 	std::cout << r2 << std::endl; 
 }
 
