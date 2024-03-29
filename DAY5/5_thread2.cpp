@@ -1,5 +1,6 @@
 ﻿#include <iostream>
 #include <thread> 
+#include <string>
 
 class Test
 {
@@ -31,11 +32,21 @@ int main()
 
 
 	// #2. 인자 전달
-	std::thread t2(&f2);
-	std::thread t3(&f3);
+	std::thread t2(&f2, 3, 2.1);
+
+	int n = 0;
+	std::string s= "AA";
+
+	std::thread t3(&f3, 1, std::ref(n), std::move(s) );
 
 	t2.join();
 	t3.join();
+
+	// 멤버함수를 스레드로 수행하려면 객체도 같이 전달
+	Test test;
+	std::thread t4(&Test::goo, &test, 1, 3.4);
+
+	t4.join();
 }
 
 
